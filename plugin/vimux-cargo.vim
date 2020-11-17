@@ -1,5 +1,7 @@
 command! CargoBuild :call CargoBuild()
 command! CargoRun :call CargoRun()
+command! CargoCheck :call CargoCheck()
+command! CargoClean :call CargoClean()
 command! CargoPromptArgs :call CargoPromptArgs()
 command! CargoTestAll :call CargoTestAll()
 command! CargoBenchAll :call CargoBenchAll()
@@ -24,6 +26,14 @@ function! CargoRun()
   call VimuxRunCommand("clear " . s:separator . " cargo run")
 endfunction
 
+function! CargoCheck()
+  call VimuxRunCommand("clear " . s:separator . " cargo check")
+endfunction
+
+function! CargoClippy()
+  call VimuxRunCommand("clear " . s:separator . " cargo clean; cargo clippy")
+endfunction
+
 function! CargoPromptArgs()
   let l:args = input(_VimuxOption("g:VimuxPromptString", "Args? "))
   call VimuxRunCommand("clear " . s:separator . " cargo run -- " . l:args)
@@ -36,6 +46,7 @@ endfunction
 function! CargoBenchAll()
   call VimuxRunCommand("clear " . s:separator . " cargo bench")
 endfunction
+
 
 function! CargoUnitTestCurrentFile()
   call CargoRunTests("")
