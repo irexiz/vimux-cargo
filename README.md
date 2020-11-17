@@ -12,10 +12,12 @@ Add something like this to your `~/.vimrc` or inside `~/.vim/ftplugin/rust.vim`
 if you want only use this mapping with files that have the rust filetype.
 
 ```vim
-map <Leader>rc :wa<CR> :CargoRun<CR>
-map <Leader>ra :wa<CR> :CargoTestAll<CR>
+map <Leader>cr :wa<CR> :CargoRun<CR>
+map <Leader>ct :wa<CR> :CargoTestAll<CR>
 map <Leader>rb :wa<CR> :CargoUnitTestCurrentFile<CR>
 map <Leader>rf :wa<CR> :CargoUnitTestFocused<CR>
+map <Leader>ch :wa<CR> :CargoCheck<CR>
+map <Leader>cp :wa<CR> :CargoClippy<CR>
 ```
 
 ### Commands
